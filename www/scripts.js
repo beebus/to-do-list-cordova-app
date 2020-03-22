@@ -1,5 +1,6 @@
 var todo = {
-	filterFlag: 'all'
+	filterFlag: 'all',
+	events: []
 };
 
 document.addEventListener('init', function(event){
@@ -99,4 +100,13 @@ todo.removeItemPrompt = function(label) {
 			}
 		}.bind(this)
 	});
+};
+
+todo.menuInit = function(target) {
+	target.querySelector('ons-list').addEventListener('click', this.filter.bind(this));
+};
+
+todo.filter = function(evt) {
+	this.filterFlag = evt.target.parentElement.getAttribute('data-filter') || 'all';
+	this.refresh();
 };

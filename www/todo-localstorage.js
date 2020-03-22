@@ -13,7 +13,7 @@ todoStorage.hasItem = function(label){
 };
 
 todoStorage.save = function(){
-	localStorage.setItem('todo', JSON.stringify(this.collection));	// saves data in local storage in case something happens
+	localStorage.setItem('todo', JSON.stringify(this.collection));
 };
 
 todoStorage.add = function(label){
@@ -26,12 +26,13 @@ todoStorage.add = function(label){
 		status: 'uncompleted'
 	});
 
-	this.save();	// save in local storage, in case something happens later to prevent this
+	this.save();
+
 	return true;
 };
 
 todoStorage.remove = function(label){
-	if(!this.hasItem(label)) {		// similar to add function, but using !this.hasItem instead
+	if(!this.hasItem(label)) {
 		return false;
 	}
 
@@ -39,14 +40,15 @@ todoStorage.remove = function(label){
 		if(item.label === label) {
 			this.collection.splice(i, 1);
 		}
-	});
+	}.bind(this));
 
-	this.save();	// save in local storage, in case something happens later to prevent this
+	this.save();
+	
 	return true;
 };
 
 todoStorage.toggle = function(label){
-	if(!this.hasItem(label)) {		// similar to add function, but using !this.hasItem instead
+	if(!this.hasItem(label)) {
 		return false;
 	}
 
@@ -56,7 +58,8 @@ todoStorage.toggle = function(label){
 		}
 	});
 
-	this.save();	// save in local storage, in case something happens later to prevent this
+	this.save();
+
 	return true;
 };
 
