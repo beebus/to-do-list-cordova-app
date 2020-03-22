@@ -21,14 +21,14 @@ todo.listInit = function(target) {
 
 	todoStorage.init();
 	this.refresh();
-}
+};
 
 todo.addItemPrompt = function() {
 	ons.notification.prompt('Insert new to-do item label.', {
 		title: 'New Item',
 		cancelable: true,
 
-		callback: function() {
+		callback: function(label) {
 			if(label === '' || label === null) {
 				return;
 			}
@@ -38,10 +38,16 @@ todo.addItemPrompt = function() {
 			} else {
 				ons.notification.alert('Failed to add item to the todo list!');
 			}
-		}
+		}.bind(this)
 	});
 };
 
 todo.refresh = function() {
 	var items = todoStorage.filter(this.filterFlag);
+
+	this.list.innerHTML = items.map(function(item){
+		return document.querySelector('#todo-list-item').innerHTML
+			.replace('{{label}}', item.label)
+			.replace('{{checked}}', item.status === 'completed' ? 'checked' : '');
+	}).join('');
 };
