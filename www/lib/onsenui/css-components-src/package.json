@@ -50,7 +50,7 @@
     "sshpk": "1.13.2",
     "stringstream": "0.0.6",
     "tar": "4.4.2",
-    "tough-cookie": "2.3.0",
+    "tough-cookie": "2.3.3",
     "ws": "1.1.5"
   },
   "engines": {
