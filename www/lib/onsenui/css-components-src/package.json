@@ -11,6 +11,7 @@
     "base64-url": "2.0.0",
     "browser-sync": "^2.18.6",
     "clean-css": "4.1.11",
+    "cookie-signature": "1.0.4",
     "cryptiles": "4.1.2",
     "eco": "^1.1.0-rc-3",
     "event-stream": "3.3.4",
@@ -51,6 +52,7 @@
     "stringstream": "0.0.6",
     "tar": "4.4.2",
     "tough-cookie": "2.3.3",
+    "tunnel-agent": "0.6.0",
     "ws": "1.1.5"
   },
   "engines": {
