@@ -33,7 +33,7 @@
     "gulp-util": "^2.2.14",
     "immutable-css": "^1.1.2",
     "is-my-json-valid": "2.17.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "lodash.template": "4.5.0",
     "method-override": "2.3.10",
     "mime": "1.4.1",
